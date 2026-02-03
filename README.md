@@ -187,4 +187,3 @@ def analisa_baut(image_path):
 
 ```
 
-Blueprint ini sudah mencakup seluruh aspek teknis yang diperlukan tim pengembang untuk memulai proyek MAESTRO CBM dari nol hingga implementasi.
