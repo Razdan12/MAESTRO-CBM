@@ -49,23 +49,14 @@ Mengacu pada diagram arsitektur, berikut adalah perjalanan data dari sensor hing
 
 * **Input:** Potongan gambar (ROI).
 * **Proses (Parallel):**
-* 
-**Pipeline 1 (OCR):** Membaca Nomor Gerbong pada bodi kereta untuk identifikasi aset.
+* **Pipeline 1 (OCR):** Membaca Nomor Gerbong pada bodi kereta untuk identifikasi aset.
 
 
 * **Pipeline 2 (Object Detection):** Mendeteksi keberadaan komponen (Baut, Pegas, Buffer).
 * **Pipeline 3 (Anomaly Detection):**
 * Cek Marker Baut: Apakah garis putus/bergeser?.
-
-
 * Cek Stiker Suhu: Apakah warna berubah (indikasi panas)?.
-
-
 * Cek Fisik: Apakah pegas patah atau selang terlepas?.
-
-
-
-
 
 
 
@@ -75,8 +66,7 @@ Mengacu pada diagram arsitektur, berikut adalah perjalanan data dari sensor hing
 * **Proses:**
 1. **Rule Engine:** Jika `probabilitas_kerusakan > 85%`, tandai sebagai "Anomali".
 2. **Aggregation:** Menggabungkan status semua komponen untuk menentukan status akhir Gerbong (GO / NO-GO).
-3. 
-**Alerting:** Kirim notifikasi ke HP Maintainer via Firebase/APNS.
+3. **Alerting:** Kirim notifikasi ke HP Maintainer via Firebase/APNS.
 
 
 
@@ -88,37 +78,18 @@ Mengacu pada diagram arsitektur, berikut adalah perjalanan data dari sensor hing
 
 ### A. Fitur Deteksi (AI Capabilities)
 
-1. 
-**Wheel Bolt Monitor:** Deteksi kelonggaran baut roda melalui pergeseran garis penanda (*misalignment marker*).
-
-
-2. 
-**Thermal Indicator Check:** Deteksi *overheat* pada *bearing* melalui perubahan warna stiker suhu.
-
-
-3. 
-**Mechanical Structural Check:** Deteksi fisik pegas (*spring*), *buffer plate*, dan selang angin (*brake hose*).
-
-
-4. 
-**Automatic Train Identification:** Pencatatan nomor gerbong otomatis via OCR.
+1. **Wheel Bolt Monitor:** Deteksi kelonggaran baut roda melalui pergeseran garis penanda (*misalignment marker*).
+2. **Thermal Indicator Check:** Deteksi *overheat* pada *bearing* melalui perubahan warna stiker suhu.
+3. **Mechanical Structural Check:** Deteksi fisik pegas (*spring*), *buffer plate*, dan selang angin (*brake hose*).
+4. **Automatic Train Identification:** Pencatatan nomor gerbong otomatis via OCR.
 
 
 
 ### B. Fitur Aplikasi (User Interface)
 
-1. 
-**Real-time Alert System:** Notifikasi *pop-up* di HP petugas saat anomali ditemukan.
-
-
-2. 
-**Digital Inspection Report:** Generasi laporan PDF otomatis menggantikan formulir kertas.
-
-
-3. 
-**Verification Module:** Fitur bagi petugas untuk memvalidasi temuan AI (Benar/Salah) untuk umpan balik perbaikan model.
-
-
+1. **Real-time Alert System:** Notifikasi *pop-up* di HP petugas saat anomali ditemukan.
+2. **Digital Inspection Report:** Generasi laporan PDF otomatis menggantikan formulir kertas.
+3. **Verification Module:** Fitur bagi petugas untuk memvalidasi temuan AI (Benar/Salah) untuk umpan balik perbaikan model.
 4. **Dashboard Analytics:** Statistik tren kerusakan dan performa armada.
 
 ---
